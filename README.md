@@ -1,47 +1,47 @@
-#Description:
+# Description:
 
-Blog Management System is a fullstack web application with user authentication, including blog setup, login,
-logout and password reset. 
-Registered users can create, set up their own blogs and can see all their content on admin dashboard. 
-Readers can comment on the posts and can also reply to the comments.
-Readers will get notified to the repiles on their comments via mail using nodemailer.
-The web application enables them to peform CRUD operations on their blog content.
-Implemented it by leveraging Model-View-Controller (MVC) architecture to separate concerns.
-The application utilizes the Socket.IO library to facilitate real-time updates on posts and comments.
+Blog Management System is a full-stack web application with user authentication, including blog setup, login, logout, and password reset. Registered users can create and set up their own blogs and view all their content on the admin dashboard. Readers can comment on posts and reply to comments. Readers will receive email notifications for replies to their comments using Nodemailer. The web application enables users to perform CRUD operations on their blog content. It is implemented using the Model-View-Controller (MVC) architecture to separate concerns. The application utilizes the Socket.IO library to facilitate real-time updates on posts and comments.
 
-#How To Setup:
+# How to Setup:
 
-1) Make a config folder and add cofig.js file in it.
- 
-2) Paste below code in config.js file
+1. Make a `config` folder and add a `config.js` file in it.
 
-code:
+2. Paste the following code in the `config.js` file:
 
-const session_secret = "";
-const email_user = "";
-const app_password = "";
-module.exports = {
-    session_secret,
-    app_password,
-    email_user
-}
+    ```javascript
+    const session_secret = "";
+    const email_user = "";
+    const app_password = "";
 
-Follow below steps:
--> Add a secret session key of yours in session_secret
--> Add your gmail in email_user which will sent notifications.
--> Follow below link to setup app_password:
--> link : https://stackoverflow.com/questions/72470777/nodemailer-response-535-5-7-8-username-and-password-not-accepted
--> Enter the generated app password in app_password.
+    module.exports = {
+        session_secret,
+        app_password,
+        email_user
+    }
+    ```
 
-3) Open index.js
-mongoose.connect("mongodb://localhost:27017/db_name")
-change the db_name to the required database name.
+   Follow the below steps to configure the file:
+   
+   - Add a secret session key of your choice in `session_secret`.
+   - Add your Gmail address in `email_user` to send notifications.
+   - Generate an app password for your Gmail account. 
+   - Instructions can be found at below link: 
+     [link](https://stackoverflow.com/questions/72470777/nodemailer-response-535-5-7-8-username-and-password-not-accepted)
+   - Replace `app_password` with the generated app password.
 
-#How to Run:
+3. Open `index.js` file and locate the following line:
 
-1) npm install
+    ```javascript
+    mongoose.connect("mongodb://localhost:27017/db_name")
+    ```
 
-2) node index.js
+   Change `db_name` to the desired name of your database.
 
-2) open below url in browser tab after running above commands in terminal.
-link : http://localhost:3000/
+# How to Run:
+
+1. Run the command `npm install` to install the required dependencies.
+
+2. Start the server by running the command `node index.js`.
+
+3. Open the following URL in a web browser: [http://localhost:3000/](http://localhost:3000/)
+
